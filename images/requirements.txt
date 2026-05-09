@@ -1,0 +1,4 @@
+qdrant-client
+ollama
+sentence-transformers
+pillow
