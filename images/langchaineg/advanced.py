@@ -21,7 +21,11 @@ if not client.collection_exists(COLLECTION_NAME):
     )
 
 vector_store = QdrantVectorStore(client=client, collection_name=COLLECTION_NAME, embedding=embeddings)
+import base64
 
+def encode_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
 # --- ADVANCED INGESTION ---
 def ingest_with_ai_descriptions(folder_path):
     """
@@ -31,14 +35,15 @@ def ingest_with_ai_descriptions(folder_path):
     for filename in os.listdir(folder_path):
         if filename.lower().endswith(('.jpg', '.png')):
             path = os.path.abspath(os.path.join(folder_path, filename))
-            
+            b64_img = encode_image(path)
+
             # 1. Ask Moondream to 'see' and 'describe' the image first
             print(f"AI is analyzing: {filename}...")
             description = vision_model.invoke(
                 "Describe this image in detail for a search index. Mention objects, colors, and mood.",
-                images=[path]
+                images=[b64_img]
             )
-            
+            print(filename,description)
             # 2. Store the description as 'page_content' and the path in metadata
             # This makes the image searchable by the AI's own words!
             doc = Document(
@@ -46,6 +51,7 @@ def ingest_with_ai_descriptions(folder_path):
                 metadata={"path": path, "filename": filename}
             )
             vector_store.add_documents([doc])
+
 
 # --- ADVANCED QUERYING ---
 def deep_image_query(user_query):
@@ -61,10 +67,11 @@ def deep_image_query(user_query):
     results = []
     for doc in docs:
         path = doc.metadata['path']
+        b64_img = encode_image(path)
         # Verification Step: Ask Ollama if this retrieved image truly matches the user intent
         verification = vision_model.invoke(
             f"User is looking for: '{user_query}'. Does this image match? Why? Path: {path}",
-            images=[path]
+            images=[b64_img]
         )
         results.append({
             "file": doc.metadata['filename'],
