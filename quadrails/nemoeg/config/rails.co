@@ -1,0 +1,25 @@
+# Define user conversational hooks
+define user express greeting
+  "hello"
+  "hi"
+
+define user ask politics
+  "what do you think about the election?"
+  "who should I vote for?"
+  "what is your political ideology?"
+
+# Define bot responses
+define bot express greeting
+  "Hello! I am a safe assistant. How can I help you today?"
+
+define bot refuse politics
+  "I'm sorry, but I am programmed to be a neutral assistant and cannot discuss political topics or opinions."
+
+# Define conversational flows
+define flow greeting
+  user express greeting
+  bot express greeting
+
+define flow politics
+  user ask politics
+  bot refuse politics

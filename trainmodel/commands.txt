@@ -1,0 +1,7 @@
+# Create and activate a virtual environment
+python -m venv training_env
+training_env\Scripts\activate
+
+# Install the essential training stack
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install transformers datasets accelerate peft bitsandbytes

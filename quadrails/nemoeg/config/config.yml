@@ -1,0 +1,12 @@
+models:
+  - type: main
+    engine: openai
+    model: llama3
+    parameters:
+      # Route OpenAI client traffic straight to your local Ollama port
+      openai_api_base: "http://localhost:11434/v1"
+      openai_api_key: "ollama"
+
+  - type: embeddings
+    engine: FastEmbed
+    model: BAAI/bge-small-en-v1.5

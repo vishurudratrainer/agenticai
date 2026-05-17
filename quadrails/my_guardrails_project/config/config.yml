@@ -1,0 +1,17 @@
+models:
+  - type: main
+    engine: openai
+    model: llama3
+    parameters:
+      openai_api_base: "http://localhost:11434/v1"
+      openai_api_key: "ollama"
+
+  - type: embeddings
+    engine: FastEmbed
+    model: all-MiniLM-L6-v2
+
+instructions:
+  - type: general
+    content: |
+      You are a helpful, polite, and safe local AI assistant. 
+      You must strictly adhere to the guardrails provided.
