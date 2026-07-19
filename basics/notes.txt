@@ -1,0 +1,21 @@
+1) Loosely typed
+int a =2
+a=2
+a=10
+
+2) Interpeted
+Line by Line
+
+3) {} /Python space in deciding scoping
+
+.py
+
+Data structures
+
+1)Mutable
+
+List--Ordered collection, can containduplicates
+Set --unordered, does not allow duplicats
+Dictionary: mappig
+2)Immutable
+Tuple
