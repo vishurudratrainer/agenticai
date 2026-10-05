@@ -1,7 +1,7 @@
 from langchain_core.prompts import MessagesPlaceholder, ChatPromptTemplate
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.runnables import RunnablePassthrough
-from langchain_community.chat_models import ChatOllama
+from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 
 # --- Setup: Define Model and History ---
@@ -13,8 +13,7 @@ chat_history = [
 
 # --- 1. Define the Condensing Prompt ---
 # This prompt uses the history to rephrase the latest input into a standalone question.
-condensing_template = """Given the following conversation and a follow-up question, 
-rephrase the follow-up question to be a standalone question.
+condensing_template = """Based on below conversation history answer question
 
 Chat History:
 {chat_history}

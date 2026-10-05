@@ -6,8 +6,8 @@ from langchain_core.callbacks.stdout import StdOutCallbackHandler
 from pydantic import BaseModel, Field
 from langchain_core.output_parsers import JsonOutputParser
 import langchain
-langchain.verbose=True
-langchain.debug=True
+#langchain.verbose=True
+#langchain.debug=True
 # 1. Define the desired output structure using Pydantic
 class Recipe(BaseModel):
     """Structured data about a simple dish."""

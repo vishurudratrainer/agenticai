@@ -1,6 +1,8 @@
 """
 Chains (LCEL)
-This example stitches the components together using the LangChain Expression Language (LCEL) pipe (|), demonstrating a full pipeline running on Ollama.
+This example stitches the components together using the 
+LangChain Expression Language (LCEL) pipe (|),
+ demonstrating a full pipeline running on Ollama.
 """
 from langchain_core.output_parsers import StrOutputParser
 # ollama_model is the ChatOllama instance from section 1

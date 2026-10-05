@@ -1,7 +1,8 @@
 """
 Docstring for agentloop.advanced.stepback
 
-This advanced technique prevents the LLM from getting bogged down in specifics. 
+This advanced technique prevents the LLM 
+from getting bogged down in specifics. 
 It forces the LLM to generate a generalized,
  "step-back" question first, 
  uses that to retrieve general context,

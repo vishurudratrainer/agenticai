@@ -2,7 +2,7 @@ import requests
 import json
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL = "llama3"   # or any model you installed via `ollama pull`
+MODEL = "mistral"   # or any model you installed via `ollama pull`
 
 import requests
 import json

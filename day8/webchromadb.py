@@ -100,11 +100,11 @@ def query_rag_agent(question: str, vectorstore: Chroma):
     print(response["answer"])
     
     # Optionally show the source documents the answer was based on
-    source_texts = [doc.page_content for doc in response.get("context", [])]
-    print("\nSource Context Retrieved (Top 3 Chunks):")
-    for i, text in enumerate(source_texts):
-        print(f"--- Chunk {i+1} ---\n{text.strip()}")
-    print("--------------------")
+  #  source_texts = [doc.page_content for doc in response.get("context", [])]
+   # print("\nSource Context Retrieved (Top 3 Chunks):")
+    #for i, text in enumerate(source_texts):
+    #   print(f"--- Chunk {i+1} ---\n{text.strip()}")
+    #print("--------------------")
 
 
 # --- 3. Execution ---

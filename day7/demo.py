@@ -156,7 +156,7 @@ def execute_step(step: str):
 # --------------------------------------------------------------------
 # REACT LOOP (Thought → Action → Observation)
 # --------------------------------------------------------------------
-def react_loop(goal: str, context: str = "", max_iters: int = 5):
+def react_loop(goal: str, context: str = "", max_iters: int = 2):
     """
     A lightweight ReAct planning loop using Ollama.
     """

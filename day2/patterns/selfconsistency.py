@@ -39,4 +39,4 @@ def self_consistency(prompt, samples=5):
 
 # Test
 prompt = "A farmer has 17 sheep. All but 9 die. How many are left?"
-self_consistency(prompt)
+self_consistency(prompt,2)

@@ -14,7 +14,7 @@ template = ChatPromptTemplate.from_messages([
 ])
 
 # Generate the final prompt (still a standard LangChain message object)
-prompt_value = template.invoke({"cuisine": "Indian", "ingredient": "lentils"})
+#prompt_value = template.invoke({"cuisine": "Indian", "ingredient": "lentils"})
 
-print("\n--- Generated Prompt ---")
-print(prompt_value.to_string())
+#print("\n--- Generated Prompt ---")
+#print(prompt_value.to_string())

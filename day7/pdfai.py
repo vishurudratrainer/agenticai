@@ -29,7 +29,7 @@ def read_pdf_text(filepath: str) -> str:
             
         print("[Tool Success: PDF content extracted.]")
         # Return only the first 1000 characters to prevent prompt overflow
-        return content[:1000] + "..." 
+        return content
         
     except Exception as e:
         return f"Error: Failed to read PDF due to: {e}"
