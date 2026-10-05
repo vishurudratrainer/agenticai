@@ -99,8 +99,8 @@ C:\Users\VISHWA\AppData\Roaming\Python\Python311\Scripts\streamlit run C:\ml\cod
 
 C:\Users\VISHWA\AppData\Roaming\Python\Python311\Scripts\streamlit run C:\ml\code\day8\strealiteg\advanced_multipage.py
 
+C:\Users\VISHWA\AppData\Roaming\Python\Python311\Scripts\streamlit run C:\ml\agenticaicode\day8\streammysql.py
 
-C:\Users\VISHWA\AppData\Roaming\Python\Python311\Scripts\streamlit run C:\ml\code\day8\streammysql.py
 
 C:\Users\VISHWA\AppData\Roaming\Python\Python311\Scripts\streamlit C:\ml\code\day8\streamweb.py
 
@@ -128,3 +128,9 @@ pip install langchain-mcp-adapters
 pip install "mcp[langchain]"
 
 pip install git+https://github.com/modelcontextprotocol/python-sdk.git
+
+
+from llama_index.llms.ollama import Ollama
+
+pip install llama-index-llms-ollama
+
