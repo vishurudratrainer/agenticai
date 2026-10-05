@@ -102,3 +102,4 @@ request_math = "Calculate the standard deviation of the following data set: [10,
 final_state_math = app.invoke({"request": request_math, "topic": "", "response": ""})
 print("\n--- Dynamic Handoff Result (MATH) ---")
 print(final_state_math["response"])
+print(final_state_math)

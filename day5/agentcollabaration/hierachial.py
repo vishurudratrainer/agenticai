@@ -99,3 +99,4 @@ app = workflow.compile()
 inputs = {"input": "I need documentation for a function: def my_func(x): return x*2", "chat_history": []}
 final_state = app.invoke(inputs)
 print(final_state["chat_history"])
+print(final_state)

@@ -1,9 +1,17 @@
+import os
+
+# 1. Set the OpenTelemetry environment variables programmatically
+os.environ["OTEL_EXPORTER_OTLP_ENDPOINT"] = "http://localhost:4318"
+os.environ["OTEL_EXPORTER_OTLP_PROTOCOL"] = "http/protobuf"
+
+# 2. Initialize the Guardrails OTLP Tracer before building guards
+from guardrails.telemetry import default_otlp_tracer
+default_otlp_tracer("support_guard")
 import json
 from pydantic import BaseModel, Field
 from guardrails import Guard
 from guardrails.validators import Validator, register_validator, PassResult, FailResult
 from litellm import completion
-
 # ==========================================
 # MANUAL VALIDATOR 1: Competitor Check
 # ==========================================

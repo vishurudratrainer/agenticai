@@ -14,7 +14,7 @@ def evaluator_optimizer(topic):
     messages = [{'role': 'user', 'content': f"Write a short python code snippet to {topic}."}]
     
     # Allow up to 3 improvement cycles
-    for i in range(3):
+    for i in range(2):
         print(f"\n--- Cycle {i+1} ---")
         
         # 1. Generator generates (or regenerates based on history)

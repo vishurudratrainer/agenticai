@@ -34,8 +34,10 @@ def analyze_incident(payload: WebhookPayload) -> IncidentAnalysis:
     Sends the incoming webhook data to the Ollama LLM for reasoning.
     """
     system_prompt = f"""
-    You are a specialized Incident Analysis Agent. Your task is to analyze the
-    incoming server alert message and structure your analysis into a JSON object
+    You are a specialized Incident Analysis Agent. 
+    Your task is to analyze the
+    incoming server alert message and structure your analysis into a 
+    JSON object
     that strictly conforms to the following Pydantic schema: {IncidentAnalysis.model_json_schema()}.
     
     The analysis must determine the incident's category, severity, and suggest

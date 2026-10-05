@@ -28,7 +28,7 @@ async def main():
             } for t in mcp_tools.tools]
 
             # Complex query: "What is the weather in Tokyo and who is the prime minister of Japan?"
-            messages = [{"role": "user", "content": "Tell me the weather in Paris and search for what the MCP protocol is."}]
+            messages = [{"role": "user", "content": "Tell me the weather in Paris"}]
             
             print("--- Agent Thinking ---")
             response = ollama.chat(model="mistral", messages=messages, tools=tools_for_ai)

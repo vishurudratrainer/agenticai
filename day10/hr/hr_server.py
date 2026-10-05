@@ -8,14 +8,14 @@ db_config = {'host': 'localhost', 'user': 'root', 'password': 'root', 'database'
 @mcp.tool()
 def list_resumes() -> list:
     """Lists all resume files in the directory."""
-    return [f for f in os.listdir("C://ml//code//day10//hr") if f.startswith("resume_")]
+    return [f for f in os.listdir("C://ml//code//day10//hr//resumes") if f.startswith("resume_")]
 
 @mcp.tool()
 @mcp.tool()
 def read_resume(filename: str) -> str:
     """Reads the content of a specific resume file from the local directory."""
     # Get the absolute path of the current directory
-    base_path = "C://ml//code//day10//hr"
+    base_path = "C://ml//code//day10//hr//resumes"
     file_path = base_path+"//"+ filename
     
     
